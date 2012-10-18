@@ -1,4 +1,4 @@
-declare interface AngularVersion {
+interface AngularVersion {
     full: string;
     major: number;
     minor: number;
@@ -6,7 +6,7 @@ declare interface AngularVersion {
     codeName: string;
 }
 
-declare interface AngularModule {
+interface AngularModule {
     requires: string[];
     name: string;
     provider(name: string, providerType: Function): AngularModule;
@@ -21,7 +21,7 @@ declare interface AngularModule {
     run(initializationFn: Function): AngularModule;
 }
 
-declare interface AngularInjector {
+interface AngularInjector {
     get(name: string): any;
     invoke(fn: Function, self?: any, locals?: any): any;
     instantiate(constructor: any, locals?: Object): any;
@@ -30,7 +30,7 @@ declare interface AngularInjector {
     annotate(fns: Function[]): string[];
 }
 
-declare interface AngularStatic {
+interface AngularStatic {
     bootstrap(element: Element, modules: string[]): any;
     bootstrap(element: Element, modules: Function[]): any;
     copy(source: any, destination: Object): Object;
