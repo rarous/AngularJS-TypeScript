@@ -1,3 +1,5 @@
+/// <reference path="jquery.d.ts"/>
+
 interface AngularVersion {
     full: string;
     major: number;
