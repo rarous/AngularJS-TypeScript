@@ -1,4 +1,4 @@
-/// <reference path="jquery.d.ts"/>
+/// <reference path="jQuery.d.ts"/>
 
 interface AngularVersion {
     full: string;
@@ -32,6 +32,13 @@ interface AngularInjector {
     annotate(fns: Function[]): string[];
 }
 
+interface JQuery { 
+    controller(name: string): Object;
+    injector(): AngularInjector;
+    scope(): ng.Scope;
+    inheritedData(key?: string): any;
+}
+
 interface AngularStatic {
     bootstrap(element: Element, modules: string[]): any;
     bootstrap(element: Element, modules: Function[]): any;
@@ -39,8 +46,8 @@ interface AngularStatic {
     copy(source: any, destination: Array): Array;
     extend(dest: Object, ...src: any[]): Object;
     equals(o1: any, o2: any): bool;
-    element(element: string): jQuery;
-    element(element: Element): jQuery;
+    element(element: string): JQuery;
+    element(element: Element): JQuery;
     forEach(obj: Array, iterator: (value: any, index?: number) => void, context?: any): Array;
     forEach(obj: Object, iterator: (value: any, key?: string) => void, context?: any): Object;
     injector(modules: string[]): AngularInjector;
@@ -305,7 +312,7 @@ declare var $templateCache: ng.Cache;
 declare var $controllerProvider: ng.Provider;
 declare function $controller(constructor: Function, locals: Object): Object;
 declare function $controller(constructor: string, locals: Object): Object;
-declare var $document: jQuery;
+declare var $document: JQuery;
 declare function $exceptionHandler(exception: Error, cause?: string);
 declare var $filterProvider: ng.Provider;
 declare function $filter(name: string): Function;
@@ -318,7 +325,7 @@ declare var $locationProvider: ng.LocationProvider;
 declare var $log: ng.Log;
 declare function $parse(expression: string): (context: Object, locals: Object) => any;
 declare var $q: ng.DeferredFactory;
-declare var $rootElement: jQuery;
+declare var $rootElement: JQuery;
 declare var $rootScopeProvider: ng.ScopeProvider;
 declare var $rootScope: ng.Scope;
 declare var $routeProvider: ng.RouteProvider;
